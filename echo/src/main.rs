@@ -1,8 +1,9 @@
 use std::env;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    noob_approach(args);
+    // let args: Vec<String> = env::args().collect();
+    // noob_approach(args);
+    ideal_approach();
 }
 
 fn noob_approach(args: Vec<String>) {
@@ -12,4 +13,7 @@ fn noob_approach(args: Vec<String>) {
     println!();
 }
 
-// fn ideal_approach(args: Vec<String>) {}
+fn ideal_approach() {
+    let output = env::args().skip(1).collect::<Vec<String>>().join(" ");
+    println!("{}", output);
+}
