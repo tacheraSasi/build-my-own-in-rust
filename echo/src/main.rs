@@ -1,7 +1,15 @@
+use std::env;
+
 fn main() {
-    println!("Hello, world!");
+    let args: Vec<String> = env::args().collect();
+    noob_approach(args);
 }
 
-fn noobApproach(){}
+fn noob_approach(args: Vec<String>) {
+    for i in 1..args.len() {
+        print!("{} ", args[i]);
+    }
+    println!();
+}
 
-fn idealApproach(){}
+// fn ideal_approach(args: Vec<String>) {}
