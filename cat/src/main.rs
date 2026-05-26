@@ -12,7 +12,7 @@ fn main() {
 
 fn noob_approach(filepaths: &[String]) {
     for path in filepaths {
-        let content = fs::read_to_string(path).unwrap_or_default();
+        let content = fs::read_to_string(path).unwrap();
         println!("{}", content);
     }
 }
