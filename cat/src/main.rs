@@ -3,14 +3,18 @@ use std::{env, fs};
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
-        println!("Usage: cat <filepath...>");
+        println!("Usage: cat <filepaths...>");
+        return;
+    }
+    noob_approach(args);
+}
+
+fn noob_approach(args: Vec<String>) {
+    if args.len() < 2 {
+        println!("Usage: cat <filepaths...>");
         return;
     }
     let filepaths = &args[1..];
-    noob_approach(filepaths);
-}
-
-fn noob_approach(filepaths: &[String]) {
     for path in filepaths {
         let content = fs::read_to_string(path).unwrap();
         println!("{}", content);
