@@ -7,7 +7,7 @@ fn main() {
         return;
     }
     let filepaths = &args[1..];
-    
+    noob_approach(filepaths);
 }
 
 fn noob_approach(filepaths: &[String]) {
