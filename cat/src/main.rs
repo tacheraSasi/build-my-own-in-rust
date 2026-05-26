@@ -1,4 +1,4 @@
-use std::env;
+use std::{env, fs};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -10,8 +10,11 @@ fn main() {
     
 }
 
-fn noob_approach(filepath: &[String]) {
-    
+fn noob_approach(filepaths: &[String]) {
+    for path in filepaths {
+        let content = fs::read_to_string(path).unwrap_or_default();
+        println!("{}", content);
+    }
 }
 
 fn ideal_approach(){}
