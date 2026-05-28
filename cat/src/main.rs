@@ -5,8 +5,8 @@ use std::{env, fs};
 fn main() {
     let args: Vec<String> = env::args().collect();
     // noob_approach(args);
-    ideal_approach(args);
-    // systems_thinking_approach();
+    // ideal_approach(args);
+    systems_thinking_approach(args);
 }
 
 fn noob_approach(args: Vec<String>) {
