@@ -1,6 +1,6 @@
+use std::fs::File;
+use std::io::{self, Read, copy};
 use std::{env, fs};
-use std::io::{self, Read};
-
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -35,4 +35,17 @@ fn ideal_approach(args: Vec<String>) {
     }
 }
 
-fn systems_thinking_approach() {}
+fn systems_thinking_approach(args: Vec<String>) {
+    if args.len() == 1 {
+        // stdin → stdout
+        let mut stdin = io::stdin();
+        let mut stdout = io::stdout();
+        copy(&mut stdin, &mut stdout).unwrap();
+    } else {
+        for filename in &args[1..] {
+            let mut file = File::open(filename).unwrap();
+            let mut stdout = io::stdout();
+            copy(&mut file, &mut stdout).unwrap();
+        }
+    }
+}
